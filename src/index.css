@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom-fonts.css */
+
+@font-face {
+  font-family: 'Groteska-Bold';
+  src: url('../fonts/Groteska-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Groteska-BoldItalic';
+  src: url('../fonts/Groteska-BoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Groteska-Book';
+  src: url('../fonts/Groteska-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Groteska-BookItalic';
+  src: url('../fonts/Groteska-BookItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Groteska-Heavy';
+  src: url('../fonts/Groteska-Heavy.otf') format('opentype');
+  font-weight: 900; /* Adjust the weight based on the font */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Groteska-HeavyItalic';
+  src: url('../fonts/Groteska-HeavyItalic.otf') format('opentype');
+  font-weight: 900; /* Adjust the weight based on the font */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Groteska-Italic';
+  src: url('../fonts/Groteska-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Groteska-Light';
+  src: url('../fonts/Groteska-Light.otf') format('opentype');
+  font-weight: 400; /* Adjust the weight based on the font */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Groteska-LightItalic';
+  src: url('../fonts/Groteska-LightItalic.otf') format('opentype');
+  font-weight: 300; /* Adjust the weight based on the font */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Groteska-Medium';
+  src: url('../fonts/Groteska-Medium.otf') format('opentype');
+  font-weight: 500; /* Adjust the weight based on the font */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Groteska-MediumItalic';
+  src: url('../fonts/Groteska-MediumItalic.otf') format('opentype');
+  font-weight: 500; /* Adjust the weight based on the font */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Groteska-Regular';
+  src: url('../fonts/Groteska-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Groteska-Thin';
+  src: url('../fonts/Groteska-Thin.otf') format('opentype');
+  font-weight: 100; /* Adjust the weight based on the font */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Groteska-ThinItalic';
+  src: url('../fonts/Groteska-ThinItalic.otf') format('opentype');
+  font-weight: 100; /* Adjust the weight based on the font */
+  font-style: italic;
+}
+
+
+.custom-shape-divider-top-1691480594 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1691480594 svg {
+    position: relative;
+    display: block;
+    width: calc(115% + 1.3px);
+    height: 84px;
+    transform: rotateY(180deg);
+}
+
+
+.custom-shape-divider-top-1691486674 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1691486674 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 104px;
+}
+.svg-stretch{
+   display: block;
+    width: calc(100% + 1.3px);
+    height: 104px;
+}
+
+.custom-shape-divider-top-1691486674 .shape-fill {
+    fill: #FFFFFF;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-top-1691486674 svg {
+        width: calc(110% + 1.3px);
+        height: 154px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1691486674 svg {
+        width: calc(111% + 1.3px);
+        height: 21px;
+    }
+}
+
+
+
