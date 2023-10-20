@@ -32,25 +32,7 @@ export interface ILinksGroup {
   path: string;
 }
 
-interface IService {
-  one: [
-    {
-      id: number;
-      title: string;
-      image: string;
-      description: string;
-    }
-  ][],
-  two: [
-    {
-      id: number;
-      title: string;
-      image: string;
-      description: string;
-    }
-  ][]
 
-};
  
 interface ISocials {
   id: number;
