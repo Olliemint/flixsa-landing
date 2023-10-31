@@ -1,12 +1,21 @@
+import { motion, useInView } from "framer-motion";
 import { services } from "../constants/data";
+import { useRef } from "react";
+
+
 
 const WhyUs = () => {
+
+  
   return (
     <div className="max-w-[1440px] mx-auto w-full">
       <h1 className="text-center mt-[124px] md:mt-[223px] text-[22px] font-groteska-medium  text-primaryWhite tracking-[-1.32px] md:text-[44px]">
         Why use Flixsa?
       </h1>
-      <div className="mt-[37px] flex  flex-col gap-y-20 md:flex-row md:gap-x-[74px] md:items-center md:mt-14">
+      <motion.div
+       
+        className="mt-[37px] flex relative  flex-col gap-y-20 lg:flex-row lg:gap-x-[74px] items-center md:mt-14"
+      >
         <div className="">
           <img
             className="hidden md:block"
@@ -19,7 +28,7 @@ const WhyUs = () => {
             alt=""
           />
         </div>
-        <div className="  space-y-6 px-6">
+        <motion.div  className="  space-y-6 px-6">
           {services.one.map((item) => (
             <div
               key={item.id}
@@ -40,9 +49,9 @@ const WhyUs = () => {
               </p>
             </div>
           ))}
-        </div>
-      </div>
-      <div className="mt-[72px] flex  flex-col-reverse gap-y-20 md:flex-row md:gap-x-[74px] md:items-center md:mt-[122px]">
+        </motion.div>
+      </motion.div>
+      <div className="mt-[72px] relative flex  flex-col-reverse gap-y-20 lg:flex-row md:gap-x-[74px] md:items-center md:justify-end md:mt-[122px]">
         <div className="  space-y-6 px-6">
           {services.two.map((item) => (
             <div

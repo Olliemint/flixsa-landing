@@ -79,7 +79,9 @@ const Navbar = () => {
 
       <div className="hidden items-center gap-4  py-[9px] px-[22px] bg-lightWhite rounded-lg xl:flex">
         <div className="">
-          <p className="text-base font-groteska-bold text-primaryWhite">Download on</p>
+          <p className="text-base font-groteska-bold text-primaryWhite">
+            Download on
+          </p>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -100,6 +102,37 @@ const Navbar = () => {
             alt=""
           />
         </div>
+      </div>
+      <div className="lg:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M3 18H21"
+            stroke="#F7F8FF"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3 12H21"
+            stroke="#F7F8FF"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3 6H21"
+            stroke="#F7F8FF"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </div>
     </div>
   );

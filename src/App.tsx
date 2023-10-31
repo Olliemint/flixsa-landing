@@ -1,13 +1,23 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Company from "./pages/Company";
 import FAQs from "./pages/FAQs";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import ContactUs from "./pages/ContactUs";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
 
 function App() {
+
+   const location = useLocation();
+  // Scroll to the top of the page when the location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <main className=" w-full h-full bg-gradient-to-r   transition-all ease-in-out duration-200 from-primaryBlack to-secondaryBlack overflow-hidden">
       <ToastContainer
@@ -18,7 +28,7 @@ function App() {
         className="mt-20 lg:mt-32"
       />
 
-      <section className="lg:px-10">
+      <section className="">
         <section className="w-full relative">
           {/* Web svgs */}
           <svg
@@ -235,7 +245,7 @@ function App() {
               </clipPath>
             </defs>
           </svg>
-          <div className="max-w-[1440px] mx-auto md:p-4  ">
+          <div className="max-w-[1440px] pb-14 mx-auto md:p-4 md:pb-20">
             <Navbar />
           </div>
         </section>
@@ -245,11 +255,12 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/company" element={<Company />} />
           <Route path="/faqs" element={<FAQs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
-
-   
       </section>
-     
+
       <section className="bg-darkBg relative mt-[134px] md:mt-[105px] overflow-hidden">
         <span className="w-[328px]  top-0  right-0 translate-x-[50%] -translate-y-[33%]  absolute border-[50px] border-cardbg h-[328px] flex items-center justify-center rounded-full lg:h-[845px] lg:w-[845px] lg:border-[150px] lg:translate-x-[38%] lg:-translate-y-[38%]"></span>
 

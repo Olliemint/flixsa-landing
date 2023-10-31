@@ -10,7 +10,7 @@ import Hero from '../components/Hero';
 const Home = () => {
   return (
     <div>
-      <section className="lg:px-10">
+      <section className="">
       
 
         <section className="w-full relative">

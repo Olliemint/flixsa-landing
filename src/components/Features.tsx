@@ -1,12 +1,40 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const sectionVariants = {
+  initial: {
+    opacity: 0,
+    x: -200, // Moves the element to the left
+  },
+  animate: {
+    opacity: 1,
+    x: 0, // Moves the element to its original position
+    transition: {
+      duration: 0.9,
+      ease: [0.17, 0.55, 0.55, 1],
+      delay: 0.5, // Delay the animation
+    },
+  },
+};
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+  };
 
 
 const Features = () => {
-    
+  
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
 
 
   return (
-    <section className="w-full">
-      <div className="w-full flex flex-col items-center justify-center gap-y-3 text-center mt-[86px] md:mt-[76px]">
+    <motion.section className="w-full">
+      <div
+        ref={ref}
+        className="w-full flex flex-col items-center justify-center gap-y-3 text-center mt-[86px] md:mt-[76px]"
+      >
         <svg
           className="fill-primaryWhite"
           xmlns="http://www.w3.org/2000/svg"
@@ -22,14 +50,31 @@ const Features = () => {
             fill=""
           />
         </svg>
-        <h1 className="mt-2 font-groteska-bold text-lg  text-primaryWhite md:text-[22px]">
+        <motion.h1
+          variants={sectionVariants}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          className="mt-2 font-groteska-bold text-lg text-primaryWhite md:text-[22px]"
+        >
           WATCH TRAILERS FOR FREE
-        </h1>
-        <p className="text-base text-primaryGray font-groteska-regular w-full max-w-[360px] leading-8">
+        </motion.h1>
+
+        <motion.p
+          variants={sectionVariants}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          className="text-base text-primaryGray font-groteska-regular w-full max-w-[360px] leading-8"
+        >
           Watch & Discover movie trailers by your interests and stay updated
-        </p>
+        </motion.p>
       </div>
-      <div className=" flex flex-col-reverse items-center justify-center mt-[94px] gap-y-20  xl:gap-y-0 xl:flex-row  xl:gap-x-[98px] md:mt-12">
+      <motion.div
+        ref={ref}
+        initial="initial"
+        animate={isInView ? "animate" : "initial"}
+        variants={fadeInUp}
+        className=" flex flex-col-reverse items-center justify-center mt-[94px] gap-y-20  xl:gap-y-0 xl:flex-row  xl:gap-x-[98px] md:mt-12"
+      >
         <div className="grid grid-rows-2 gap-y-[80px] xl:gap-y-48 xxl:gap-y-60">
           <div className="w-full  max-w-[380px] md:row-span-full">
             <div className="flex flex-col items-center justify-center w-full xl:items-end">
@@ -156,8 +201,8 @@ const Features = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 

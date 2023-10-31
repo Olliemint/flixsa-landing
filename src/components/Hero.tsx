@@ -1,11 +1,12 @@
 import WebVideo from "../assets/video/web.mp4";
 import AndroidVideo from "../assets/video/android.mp4";
+import { motion } from "framer-motion";
 
 
 const Hero = () => {
 
   return (
-    <section className="w-full relative h-[760px] sm:h-[780px]  md:h-[800px] overflow-hidden">
+    <section className="w-full relative h-[760px] sm:h-[1000px]  md:h-[800px] overflow-hidden">
       <div className="absolute z-10  h-full w-full overflow-hidden rounded-[8px]  lg:rounded-[64px]">
         <svg
           className="lg:hidden"
@@ -84,42 +85,66 @@ const Hero = () => {
         </video>
       </div>
 
-      <div className=" pt-[78px] z-20 flex flex-col gap-y-3 items-center justify-center  text-center sm:pt-[50px]">
-        <h1 className="z-10 px-3 text-primaryWhite font-groteska-medium  text-[24px] tracking-[-0.72px] md:leading-[88px] md:tracking-[-1.62px] md:text-[40px] sm:px-0 lg:text-[54px] max-w-[865px]">
+      <div className="pt-[78px] z-20 flex flex-col gap-y-3 items-center justify-center text-center sm:pt-[50px]">
+        <motion.h1
+          className="z-10 px-3 text-primaryWhite font-groteska-medium text-[24px] tracking-[-0.72px] md:leading-[88px] md:tracking-[-1.62px] md:text-[40px] sm:px-0 lg:text-[54px] max-w-[865px]"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           Your One-Stop Destination for a Seamless Movie Experience
-        </h1>
-        <p className="z-10 w-full font-groteska-regular px-4 max-w-[687px] text-base leading-7 text-primaryGray sm:text-lg sm:leading-8 sm:px-10 md:px-2">
+        </motion.h1>
+
+        <motion.p
+          className="z-10 w-full font-groteska-regular px-4 max-w-[687px] text-base leading-7 text-primaryGray sm:text-lg sm:leading-8 sm:px-10 md:px-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
           Experience the magic of cinema like never before! Book your tickets
           today and join us in celebrating the art of storytelling on the big
           screen. Your unforgettable cinematic adventure starts here! 🍿
-        </p>
-        <div className="z-20 flex gap-[18px] mt-8 md:gap-7 md:mt-10">
-          <img
+        </motion.p>
+
+        <motion.div
+          className="z-20 flex gap-[18px] mt-8 md:gap-7 md:mt-10"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <motion.img
             className="h-[56.096px] md:h-full"
             src="https://res.cloudinary.com/seeders/image/upload/v1697553274/Google_Play_Blue_Border_j2o66o.png"
             alt=""
           />
-          <img
+          <motion.img
             className="h-[56.096px] md:h-full"
             src="https://res.cloudinary.com/seeders/image/upload/v1697552972/App_Store_Blue_Border_qxkoxa.png"
             alt=""
           />
-        </div>
+        </motion.div>
       </div>
+
       {/* download links */}
 
-      <div className=" absolute  -bottom-48 z-20 justify-center items-center w-full overflow-y-hidden hidden md:flex">
-        <img
-          className="z-0  w-full max-w-[698px] h-full object-cover"
+      <div className="absolute -bottom-48 z-20 justify-center items-center w-full overflow-y-hidden hidden md:flex">
+        <motion.img
+          className="z-0 w-full max-w-[698px] h-full object-cover"
           src="https://res.cloudinary.com/seeders/image/upload/v1697459430/Frame_1000003860_eclyyn.png"
           alt=""
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
         />
       </div>
       <div className="absolute bottom-0 z-20 overflow-hidden w-full md:hidden">
-        <img
-          className="z-0  w-full h-full object-cover"
+        <motion.img
+          className="z-0 w-full h-full object-cover"
           src="https://res.cloudinary.com/seeders/image/upload/v1697553664/Frame_1000003867_t35kk1.png"
           alt=""
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
         />
       </div>
     </section>

@@ -41,6 +41,12 @@ interface ISocials {
   description: string;
 }
 
+export interface IFaqs { 
+  id: number;
+  title: string;
+  description: string;
+}
+
 
 
 
@@ -146,13 +152,43 @@ export const core_values: ISocials[] = [
 ];
 
 
-export const faqs: String[] = [
-  "What is Flixsa?",
-  "How do i book a movie ticket?",
-  "What payment method can i use?",
-  "What is Flixsa Wallet?",
-  "How can i get a refund?",
-  "Can i book for a group?",
+export const faqs:IFaqs[] = [
+  {
+    id: 1,
+    title: "What is Flixsa?",
+    description:
+      "Flixsa is a platform that provides a smooth & seamless means of booking movies with a wide variety of cinemas closest in your city. This allow cinemas to set show dates and time while providing customers with an easy platform to order tickets.",
+  },
+  {
+    id: 2,
+    title: "How do i book a movie ticket?",
+    description:
+      "To book a movie ticket, open the app, select your preferred movie, theatre & showtime, select the number of tickets, and proceed to payment.",
+  },
+  {
+    id: 3,
+    title: "What payment method can i use?",
+    description:
+      "We accept various payment methods, including credit/debit cards, in app wallets, bank transfers, USSD transfers and Qr code payment methods.",
+  },
+  {
+    id: 4,
+    title: "What is Flixsa Wallet?",
+    description:
+      "Flixsa wallet is a secure feature on the app where you can put in money for later use. The money in the wallet can be used to make payments for tickets booked on the app.",
+  },
+  {
+    id: 5,
+    title: "How can i get a refund?",
+    description:
+      "Refund policies vary, so check the app's terms and conditions. Typically, refunds are possible if you cancel within the allowed time frame or if the show is canceled by the theater.",
+  },
+  {
+    id: 6,
+    title: "Can i book for a group?",
+    description:
+      "Yes, we allow multiple bookings, and they may offer special group discounts. Check with the app for details on group booking options.",
+  },
 ];
 
 

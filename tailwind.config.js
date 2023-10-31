@@ -48,6 +48,7 @@ export default {
       boxShadow: {
         "socials-shadow": "0px 5.84px 33.58px 0px rgba(196, 196, 196, 0.15)",
         "follow-btn-shadow": "0px 15px 32px 0px rgba(0, 0, 0, 0.60)",
+        "send-shadow": "0px 8px 26.85px 0px rgba(0, 29, 109, 0.35)",
       },
     },
   },

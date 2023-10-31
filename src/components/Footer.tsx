@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -91,25 +92,25 @@ const Footer = () => {
                 <td>
                   <ul className="mt-4 space-y-[27px]">
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to={`/terms-of-service`}
                         className="font-groteska-medium text-start text-primaryWhite"
                       >
                         Terms of Service
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to={`/privacy-policy`}
                         className="font-groteska-medium text-start text-primaryWhite"
                       >
                         Privacy Policy
-                      </a>
+                      </Link>
                     </li>
                     <li className="text-dar text-darkBg">
-                      <a href="/" className="text-transparent">
+                      <Link to={`/privacy-policy`} className="text-transparent">
                         Privacy Policy
-                      </a>
+                      </Link>
                     </li>
                     <li className="text-dar text-darkBg">
                       <a href="/" className="text-transparent">

@@ -2,7 +2,7 @@
 const Testimonials = () => {
   return (
     <div className="max-w-[1440px] mx-auto w-full px-[26px] mt-[72px] md:mt-[192px] md:px-0">
-      <div className="mt-[37px]  flex  flex-col gap-y-20 md:flex-row md:gap-x-[74px] md:items-center md:mt-14">
+      <div className="mt-[37px]  flex  flex-col gap-y-20 lg:flex-row lg:gap-x-[74px] md:items-center md:mt-14">
        
         <div className="hidden md:block">
           <img
