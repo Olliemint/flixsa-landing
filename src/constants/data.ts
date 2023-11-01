@@ -48,7 +48,13 @@ export interface IFaqs {
 }
 
 
-
+interface Testimonial {
+  id: number;
+  name: string;
+  occupation: string;
+  imageSrc: string;
+  quote: string;
+}
 
 export const services = {
   one: [
@@ -192,4 +198,46 @@ export const faqs:IFaqs[] = [
 ];
 
 
+export const testimonials: Testimonial[] = [
+  {
+    id: 1,
+
+    name: "Oliver Maiyo",
+    occupation: "Student",
+    imageSrc:
+      "https://res.cloudinary.com/seeders/image/upload/v1697571539/Rectangle_15_yhwvyb.png",
+    quote:
+      "As a frequent moviegoer, Flixsa is a game-changer. I can't imagine booking tickets any other way now. The app's convenience and the ability to select my preferred seats in advance are fantastic. Plus, their loyalty rewards make every visit even more rewarding.",
+  },
+  {
+    id: 2,
+
+    name: "Emily Johnson",
+    occupation: "Engineer",
+    imageSrc:
+      "https://cdn.pixabay.com/photo/2023/05/20/16/35/dog-8006807_640.jpg",
+    quote:
+      "I've been using Flixsa for a while now, and it has simplified my movie ticket booking. The user-friendly interface and real-time seat selection are top-notch. Flixsa's service is unbeatable.",
+  },
+  {
+    id: 3,
+
+    name: "David Brown",
+    occupation: "Architect",
+    imageSrc:
+      "https://cdn.pixabay.com/photo/2023/10/16/10/51/fox-8318961_640.png",
+    quote:
+      "Flixsa has made movie nights a breeze. The ability to choose seats in advance has eliminated the hassle of arriving early to secure good seats. I highly recommend Flixsa to all movie enthusiasts.",
+  },
+  {
+    id: 4,
+
+    name: "Linda Smith",
+    occupation: "Teacher",
+    imageSrc:
+      "https://cdn.pixabay.com/photo/2023/09/16/17/13/cat-8257177_640.jpg",
+    quote:
+      "Flixsa's loyalty program is a fantastic bonus. With each ticket purchase, I earn rewards that I can redeem for future movie outings. It's a win-win. Flixsa has truly revolutionized how I experience movies.",
+  },
+];
 

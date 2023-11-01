@@ -43,7 +43,7 @@ const WhyUs = () => {
                   {item.title}
                 </h1>
               </div>
-              <p className="text-sm md:text-[18px] font-groteska-regular text-primaryGray mt-[10.5px]">
+              <p className="text-sm leading-8 md:text-[18px] font-groteska-regular text-primaryGray mt-[10.5px]">
                 {item.description}
               </p>
             </div>
@@ -67,7 +67,7 @@ const WhyUs = () => {
                   {item.title}
                 </h1>
               </div>
-              <p className="text-sm md:text-[18px] font-groteska-regular text-primaryGray mt-[10.5px]">
+              <p className="text-sm leading-8 md:text-[18px] font-groteska-regular text-primaryGray mt-[10.5px]">
                 {item.description}
               </p>
             </div>

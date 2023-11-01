@@ -28,6 +28,7 @@ export default {
         lightWhite: "rgba(255, 255, 255, 0.05)",
         cardbg: "rgba(255, 255, 255, 0.08)",
         ratingBtns: "rgba(255, 255, 255, 0.10)",
+        toggleIndicator: "rgba(247, 248, 255, 0.08)",
       },
       fontFamily: {
         "groteska-bold": ["Groteska-Bold", "sans-serif"],
