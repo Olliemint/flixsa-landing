@@ -1,6 +1,5 @@
-import { motion, useInView } from "framer-motion";
+import { motion} from "framer-motion";
 import { services } from "../constants/data";
-import { useRef } from "react";
 
 
 

@@ -1,16 +1,6 @@
 import { terms } from "../constants/terms";
 
 const TermsOfService = () => {
-  // function to format the description
-  function formatDescription(description:string) {
-    // regular expression to find and replace the email address
-    const formattedDescription = description.replace(
-      /info@flixsa\.com/g,
-      '<span class="email-address">info@flixsa.com</span>'
-    );
-
-    return <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />;
-  }
 
   return (
     <div className="max-w-[1440px] mx-auto ">

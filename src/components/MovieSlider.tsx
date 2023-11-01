@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Circle from "../assets/iimages/circle.png";
 import axios from "axios";
-import { AnimatePresence, Variants, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 

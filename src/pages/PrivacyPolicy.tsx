@@ -1,5 +1,4 @@
 import { policies } from "../constants/policy";
-import { terms } from "../constants/terms";
 
 const PrivacyPolicy = () => {
  
