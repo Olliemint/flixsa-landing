@@ -9,17 +9,38 @@ import TermsOfService from "./pages/TermsOfService";
 import ContactUs from "./pages/ContactUs";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import SideMenu from "./components/SideMenu";
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
 
-   const location = useLocation();
+
+
+  const toggleSidebar = () => {
+    setSidebarOpen((prevState) => !prevState);
+  };
+
+ 
+
   // Scroll to the top of the page when the location changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
   return (
-    <main className=" w-full h-full bg-gradient-to-r   transition-all ease-in-out duration-200 from-primaryBlack to-secondaryBlack overflow-hidden">
+    <main className=" w-full h-full bg-gradient-to-r  relative  transition-all ease-in-out duration-200 from-primaryBlack to-secondaryBlack overflow-hidden">
+      <div
+        className={` bg-primaryWhite fixed left-0 top-0 z-50 flex h-full w-[280px] flex-col overflow-y-hidden duration-300 ease-linear lg:static lg:translate-x-0 lg:hidden ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <SideMenu
+          toggleSidebar={toggleSidebar}
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+        />
+      </div>
       <ToastContainer
         autoClose={4000}
         icon={false}
@@ -245,8 +266,11 @@ function App() {
               </clipPath>
             </defs>
           </svg>
-          <div className="max-w-[1440px] pb-14 mx-auto md:p-4 md:pb-20">
-            <Navbar />
+          <div className="max-w-[1440px] pb-14 mx-auto md:p-4 md:pb-20 ">
+            <Navbar
+              sidebarOpen={sidebarOpen}
+              toggleSidebar={toggleSidebar}
+            />
           </div>
         </section>
 

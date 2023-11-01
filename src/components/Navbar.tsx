@@ -1,8 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { groupLinks } from "../constants/data";
-const Navbar = () => {
+
+interface SidebarProps {
+  sidebarOpen: boolean;
+  toggleSidebar: () => void;
+}
+
+
+const Navbar = ({
+  sidebarOpen,
+  toggleSidebar,
+}: SidebarProps) => {
+
+ 
   return (
-    <div className="w-full px-4 flex items-center justify-between py-10 relative md:px-0">
+    <div className="w-full px-4 flex items-center  justify-between py-10 md:px-0">
       <header className="w-full   max-w-[84px] text-lg font-groteska-regular text-primaryWhite lg:max-w-[300px]">
         <span className="flex gap-[7px] items-center sm:gap-4">
           <svg
@@ -103,8 +115,10 @@ const Navbar = () => {
           />
         </div>
       </div>
-      <div className="lg:hidden">
+      <div className={`lg:hidden ${sidebarOpen && "hidden"}`}>
         <svg
+          className={`cursor-pointer}`}
+          onClick={toggleSidebar}
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
