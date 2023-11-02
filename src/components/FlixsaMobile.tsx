@@ -1,15 +1,20 @@
 
 const FlixsaMobile = () => {
     return (
-      <div className="flex flex-col px-5 justify-center items-center mt-[58px] md:mt-[211px] md:px-0">
-        <div className="w-full relative px-[14px] max-w-[1216px] rounded-[20px] overflow-hidden bg-darkBg flex flex-col gap-y-[55.97px] md:pt-[77px] md:pl-[74px] md:rounded-[64px] md:flex-row md:gap-x-[49px]">
+      <div
+      
+        className="flex flex-col px-5 justify-center items-center mt-[58px] md:mt-[211px] xxl:px-0"
+      >
+        <div className="w-full relative px-[14px] max-w-[1216px] rounded-[20px] overflow-hidden bg-darkBg flex flex-col gap-y-[55.97px] items-center md:pt-[77px] md:pl-[74px] md:rounded-[64px] md:flex-row md:gap-x-[49px]">
           <span className="w-[328px] bottom-0 left-0 -translate-x-[50%] translate-y-[50%] absolute border-[50px] border-cardbg h-[328px] flex items-center justify-center rounded-full md:h-[448px] md:w-[448px] md:border-[75px] md:-translate-x-[38%] md:translate-y-[49%]"></span>
           <span className="w-[328px] top-0  right-0 translate-x-[55%] -translate-y-[55%]  absolute border-[50px] border-cardbg h-[328px] flex items-center justify-center rounded-full md:h-[448px] md:w-[448px] md:border-[75px] md:translate-x-[40%] md:-translate-y-[49%]"></span>
-          <div className="w-full max-w-[554px] mt-[61.84px] md:mt-[170px]">
+          <div className="w-full max-w-[554px] mt-[61.84px] md:mt-0 ">
             <h1 className="text-[18px] text-primaryGray font-groteska-medium tracking-[-0.66px] md:text-[22px]">
               Flixsa Mobile App
             </h1>
-            <p className="text-[22px] tracking-[-0.66px] text-primaryWhite font-groteska-regular md:text-[36px] md:mt-3">
+            <p
+              
+              className="text-[22px] tracking-[-0.66px] text-primaryWhite font-groteska-regular md:text-[36px] md:mt-3">
               Embark on a memorable & seamless cinematic experience with the
               Flixsa Mobile App{" "}
             </p>

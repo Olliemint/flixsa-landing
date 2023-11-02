@@ -2,7 +2,7 @@ import { core_values } from '../constants/data';
 
 const CoreValues = () => {
   return (
-    <div className="max-w-[1440px] mx-auto">
+    <div className="max-w-[1440px] mx-auto lg:mt-10">
       <div className="w-full flex flex-col items-center justify-center">
         <div className="max-w-[687px] text-center space-y-[14px] px-[22px] md:px-0 md:space-y-8">
           <h1 className="text-2xl text-primaryWhite font-groteska-bold tracking-[-0.72px] md:text-[54px]">

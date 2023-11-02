@@ -32,26 +32,28 @@ interface Movie {
 
 
 const MovieSlider = () => {
-  const [trendingMovies, setTrendingMovies] = useState<Movie[]>([])
+  const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
   const [currentMovieIndex, setCurrentMovieIndex] = useState<number>(0);
   const [currentMovie, setCurrentMovie] = useState<Movie>();
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
+  // Define a state to toggle visibility of the movie info div
+  const [isInfoVisible, setIsInfoVisible] = useState(true);
 
-  
+  const variants = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 100 },
+  };
 
+  const toggleDescription = () => {
+    setIsDescriptionExpanded(!isDescriptionExpanded);
+  };
 
-
-    const toggleDescription = () => {
-      setIsDescriptionExpanded(!isDescriptionExpanded);
-    };
-
-  useEffect(() => { 
+  useEffect(() => {
     if (trendingMovies?.length > 0) {
       setCurrentMovie(trendingMovies[currentMovieIndex]);
     }
   }, [currentMovieIndex, currentMovie]);
-
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {
@@ -75,28 +77,27 @@ const MovieSlider = () => {
     fetchTrendingMovies();
   }, []);
 
-    useEffect(() => {
-      // Function to advance to the next movie
-      const showNextMovie = () => {
-        if (trendingMovies?.length > 0) {
-          setCurrentMovieIndex((currentMovieIndex + 1) % trendingMovies?.length);
-        }
-      };
+  useEffect(() => {
+    // Function to advance to the next movie
+    const showNextMovie = () => {
+      if (trendingMovies?.length > 0) {
+        setCurrentMovieIndex((currentMovieIndex + 1) % trendingMovies?.length);
+      }
+    };
 
-      // Set a timer to switch to the next movie after 5 seconds
-      const timer = setTimeout(() => {
-        showNextMovie();
-      }, 5000);
+    // Set a timer to switch to the next movie after 5 seconds
+    const timer = setTimeout(() => {
+      showNextMovie();
+    }, 5000);
 
-      // Clear the timer when the component unmounts
-      return () => {
-        clearTimeout(timer);
-      };
-    }, [currentMovieIndex, trendingMovies]);
-
+    // Clear the timer when the component unmounts
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [currentMovieIndex, trendingMovies]);
 
   return (
-    <div className="py-24 max-w-[1440px] mx-auto">
+    <div className="py-24 max-w-[1440px] mx-auto md:mt-12">
       <div className="space-y-2 py-7 px-5 lg:hidden">
         <h1 className="text-[22px] font-groteska-bold tracking-[-0.66px] text-primaryWhite">
           Featured on Flixsa
@@ -115,7 +116,17 @@ const MovieSlider = () => {
               Best features for you today!
             </p>
           </div>
-          <div className="max-w-[487px] space-y-6">
+          <AnimatePresence mode="wait">
+
+
+          <motion.div
+            key={currentMovie?.id}
+            initial={false} // Initial state (entry animation)
+            animate={{ opacity: 1, y: 0 }} // Animation when the element is mounted
+            exit={{ opacity: 0, y: -20 }} // Animation when the element is removed
+            transition={{ duration: 0.5 }} // Animation duration
+            className="max-w-[487px] space-y-6"
+          >
             <h1 className="text-[22px] font-groteska-bold  text-primaryWhite md:text-[44px]">
               {currentMovie?.title}
             </h1>
@@ -213,7 +224,8 @@ const MovieSlider = () => {
                 </span>
               )}
             </p>
-          </div>
+          </motion.div>
+          </AnimatePresence>
         </div>
         <div className="w-full overflow-x-hidden flex gap-x-4 px-5 md:px-0">
           {trendingMovies?.map((movie, index) => (

@@ -1,21 +1,61 @@
-import { motion} from "framer-motion";
+import { motion, useInView} from "framer-motion";
 import { services } from "../constants/data";
+import { useRef } from "react";
+
+const sectionVariants = {
+  initial: {
+    opacity: 0,
+    x: -200, // Moves the element to the left
+  },
+  animate: {
+    opacity: 1,
+    x: 0, // Moves the element to its original position
+    transition: {
+      duration: 0.9,
+      ease: [0.17, 0.55, 0.55, 1],
+      delay: 0.3, // Delay the animation
+    },
+  },
+};
+const sectionVariantsReverse = {
+  initial: {
+    opacity: 0,
+    x: 200, // Move the element to the right
+  },
+  animate: {
+    opacity: 1,
+    x: 0, // Move the element to its original position
+    transition: {
+      duration: 0.9,
+      ease: [0.17, 0.55, 0.55, 1],
+      delay: 0.3, // Delay the animation
+    },
+  },
+};
 
 
 
 const WhyUs = () => {
-
+  const ref = useRef(null);
+  const ref_sn = useRef(null);
+const isInView_sn = useInView(ref_sn, { once: true });
+  
+  
+const isInView = useInView(ref, { once: true });
   
   return (
     <div className="max-w-[1440px] mx-auto w-full">
       <h1 className="text-center mt-[124px] md:mt-[223px] text-[22px] font-groteska-medium  text-primaryWhite tracking-[-1.32px] md:text-[44px]">
         Why use Flixsa?
       </h1>
-      <motion.div
-       
-        className="mt-[37px] flex relative  flex-col gap-y-20 lg:flex-row lg:gap-x-[74px] items-center md:mt-14"
-      >
-        <div className="">
+      <div className="mt-[37px] flex relative  flex-col gap-y-20 lg:flex-row lg:gap-x-[74px] items-center md:mt-14">
+        <motion.div
+          ref={ref_sn}
+          variants={sectionVariants}
+          animate={isInView_sn ? "animate" : "initial"}
+          initial="initial"
+          className=""
+        >
           <img
             className="hidden md:block"
             src="https://res.cloudinary.com/seeders/image/upload/v1697557170/Frame_1000003824_vi5yus.png"
@@ -26,8 +66,14 @@ const WhyUs = () => {
             src="https://res.cloudinary.com/seeders/image/upload/v1697565705/Frame_1000003864_se5yvs.png"
             alt=""
           />
-        </div>
-        <motion.div  className="  space-y-6 px-6">
+        </motion.div>
+        <motion.div
+          ref={ref_sn}
+          variants={sectionVariantsReverse}
+          animate={isInView_sn ? "animate" : "initial"}
+          initial="initial"
+          className="  space-y-6 px-6"
+        >
           {services.one.map((item) => (
             <div
               key={item.id}
@@ -49,9 +95,15 @@ const WhyUs = () => {
             </div>
           ))}
         </motion.div>
-      </motion.div>
+      </div>
       <div className="mt-[72px] relative flex  flex-col-reverse gap-y-20 lg:flex-row md:gap-x-[74px] md:items-center md:justify-end md:mt-[122px]">
-        <div className="  space-y-6 px-6">
+        <motion.div
+          ref={ref}
+          variants={sectionVariants}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          className="  space-y-6 px-6"
+        >
           {services.two.map((item) => (
             <div
               key={item.id}
@@ -72,8 +124,14 @@ const WhyUs = () => {
               </p>
             </div>
           ))}
-        </div>
-        <div className="">
+        </motion.div>
+        <motion.div
+          ref={ref}
+          variants={sectionVariantsReverse}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          
+          className="">
           <img
             className="hidden md:block"
             src="https://res.cloudinary.com/seeders/image/upload/v1697557171/Frame_1000003825_ogseis.png"
@@ -84,7 +142,7 @@ const WhyUs = () => {
             src="https://res.cloudinary.com/seeders/image/upload/v1697566859/Frame_1000003864_1_e4xqfd.png"
             alt=""
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

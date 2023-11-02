@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import AppLinks from "../components/AppLinks";
 import CoreValues from "../components/CoreValues";
 
@@ -5,7 +6,7 @@ const Company = () => {
   return (
     <div className="max-w-[1440px] mx-auto">
       <div className="w-full flex flex-col items-center justify-center">
-        <div className="max-w-[687px] text-center space-y-[14px] px-[22px] md:px-0 md:space-y-8">
+        <div className="max-w-[687px] text-center space-y-[14px] px-[22px] md:px-0 md:space-y-8 relative">
           <h1 className="text-2xl text-primaryWhite font-groteska-bold tracking-[-0.72px] md:text-[54px]">
             Who are we?
           </h1>
@@ -15,7 +16,14 @@ const Company = () => {
             the ultimate movie-watching experience, making it easier than ever
             to discover, enjoy, and book your favorite films.
           </p>
-          <div className="py-[52px] flex items-center justify-center">
+          <motion.div
+            animate={{
+              scale: [1, 2, 2, 1, 1],
+              rotate: [0, 0, 100, 100, 0],
+              borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+            }}
+            className="py-[52px] flex items-center justify-center"
+          >
             <img
               className="hidden md:block"
               src="https://res.cloudinary.com/seeders/image/upload/v1697796543/Group_48095588_wzxq5g.png"
@@ -26,9 +34,9 @@ const Company = () => {
               src="https://res.cloudinary.com/seeders/image/upload/v1697796563/Group_48095589_jlbviy.png"
               alt=""
             />
-          </div>
+          </motion.div>
         </div>
-        <div className="px-5 space-y-7  md:px-0  mt-10 lg:mt-20 ">
+        <div className="px-5 space-y-7 mt-24  md:px-0   lg:mt-20 ">
           <h1 className="text-[22px] font-groteska-bold tracking-[-1.32px] text-primaryWhite md:text-[44px] text-center lg:text-start">
             Our Founder’s Story
           </h1>

@@ -1,8 +1,8 @@
 
 const AppLinks = () => {
   return (
-    <div className="max-w-[1440px] mx-auto flex justify-center px-5 md:px-0">
-      <div className="max-w-[375px] w-full p-[26px] bg-darkBg rounded-[32px] items-center text-center flex flex-col gap-y-[30px] md:max-w-[1339px]  xl:flex-row xl:gap-x-[43px]">
+    <div className="max-w-[1440px] mx-auto flex justify-center px-5 xxl:px-0">
+      <div className=" w-full p-[26px] bg-darkBg rounded-[32px] items-center text-center flex flex-col gap-y-[30px] md:max-w-[1339px]  xl:flex-row xl:gap-x-[43px]">
         <p className="text-[22px] font-groteska-bold tracking-[-0.66px] text-primaryWhite w-full xl:max-w-[803px] xl:text-[54px] xl:text-start">
           Get the App & Start Booking Movies without Hassle 🥳
         </p>

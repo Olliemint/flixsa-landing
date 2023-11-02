@@ -1,10 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { testimonials } from "../constants/data";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 
+
+const sectionVariants = {
+  initial: {
+    opacity: 0,
+    x: -200, // Moves the element to the left
+  },
+  animate: {
+    opacity: 1,
+    x: 0, // Moves the element to its original position
+    transition: {
+      duration: 0.9,
+      ease: [0.17, 0.55, 0.55, 1],
+      delay: 0.3, // Delay the animation
+    },
+  },
+};
 const Testimonials = () => {
 
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+
+    const ref_sn = useRef(null);
+    const isInView_sn = useInView(ref_sn, { once: true });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,13 +42,17 @@ const Testimonials = () => {
   return (
     <div className="max-w-[1440px] mx-auto w-full px-[26px] mt-[72px] md:mt-[192px] md:px-0">
       <div className="mt-[37px]  flex  flex-col gap-y-20 lg:flex-row lg:gap-x-[74px] md:items-center md:mt-14">
-        <div className="hidden md:block">
+        <motion.div
+          ref={ref_sn}
+          variants={sectionVariants}
+          animate={isInView_sn ? "animate" : "initial"}
+          className="hidden md:block">
           <img
             className=""
             src="https://res.cloudinary.com/seeders/image/upload/v1697571296/Frame_1000003831_vh22xg.png"
             alt=""
           />
-        </div>
+        </motion.div>
         <div className="max-w-[554px]  space-y-5">
           <h1 className="text-2xl font-groteska-medium   text-primaryWhite md:text-[36px]">
             What do they think?
@@ -66,7 +89,7 @@ const Testimonials = () => {
             </motion.div>
           </AnimatePresence>
 
-          <div className="w-[100.61px] py-4 px-[8px] bg-primaryBlack bg-opacity-70 rounded-[10px] flex items-center justify-between">
+          <div className="w-[88px] h-[23px] px-[8px] bg-primaryBlack bg-opacity-70 rounded-[10px] flex items-center justify-between">
             {testimonials.map((item,index) => (
               <p key={item.id} className="">
                 <span

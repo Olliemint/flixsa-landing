@@ -28,7 +28,8 @@ const SideMenu = ({ toggleSidebar, sidebarOpen,setSidebarOpen }: SideMenuProps) 
   });
   return (
     <div className="py-10  flex flex-col items-center">
-      <header className="w-full text-lg font-groteska-regular text-primaryWhite flex justify-between px-10 border-b pb-4">
+     
+      <header className="w-full text-lg font-groteska-regular text-primaryWhite flex justify-between px-4 border-b pb-4 border-primaryBlack">
         <span className="flex gap-[7px] items-center sm:gap-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +132,32 @@ const SideMenu = ({ toggleSidebar, sidebarOpen,setSidebarOpen }: SideMenuProps) 
             )}
           </NavLink>
         ))}
+      </div>
+      <div className="flex mt-16 items-center gap-4  py-[9px] px-[22px] bg-primaryGray rounded-lg ">
+        <div className="">
+          <p className="text-base font-groteska-bold text-primaryWhite">
+            Download on
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="2"
+          height="24"
+          viewBox="0 0 2 24"
+          fill="none"
+        >
+          <path d="M1 23.5L1 0.499999" stroke="#F7F8FF" stroke-width="0.3" />
+        </svg>
+        <div className="flex gap-3 ">
+          <img
+            src="https://res.cloudinary.com/seeders/image/upload/v1697456969/Google_Play_Black_ad7wxw.png"
+            alt=""
+          />
+          <img
+            src="https://res.cloudinary.com/seeders/image/upload/v1697456969/App_Store_Black_tjy4ai.png"
+            alt=""
+          />
+        </div>
       </div>
     </div>
   );

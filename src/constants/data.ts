@@ -19,7 +19,7 @@ export const groupLinks: ILinksGroup[] = [
   },
   {
     name: "FAQs",
-    path: "/FAQs",
+    path: "/faqs",
   },
   {
     name: "Contact Us",
