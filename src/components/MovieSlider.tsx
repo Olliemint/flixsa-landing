@@ -37,14 +37,7 @@ const MovieSlider = () => {
   const [currentMovie, setCurrentMovie] = useState<Movie>();
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
-  // Define a state to toggle visibility of the movie info div
-  const [isInfoVisible, setIsInfoVisible] = useState(true);
-
-  const variants = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 100 },
-  };
-
+ 
   const toggleDescription = () => {
     setIsDescriptionExpanded(!isDescriptionExpanded);
   };

@@ -9,7 +9,7 @@ import TermsOfService from "./pages/TermsOfService";
 import ContactUs from "./pages/ContactUs";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SideMenu from "./components/SideMenu";
 import TopRightSvgs from "./components/TopRightSvgs";
 import FooterSvgs from "./components/svgs/FooterSvgs";
