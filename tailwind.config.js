@@ -29,6 +29,8 @@ export default {
         cardbg: "rgba(255, 255, 255, 0.08)",
         ratingBtns: "rgba(255, 255, 255, 0.10)",
         toggleIndicator: "rgba(247, 248, 255, 0.08)",
+        backdrop_bg: "rgba(38, 50, 67, 0.00)",
+        backdrop_bg2: "#263243",
       },
       fontFamily: {
         "groteska-bold": ["Groteska-Bold", "sans-serif"],
